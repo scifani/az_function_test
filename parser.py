@@ -1,9 +1,14 @@
 import json
 
-data = {
-  "firstname":"simone",
-  "lastname": "cifani",
-  "age": 38
-}
+async def main(req: func.HttpRequest) -> func.HttpResponse:
+  """
+  The main entry point to the function.
+  """
+    
+  data = {
+    "firstname":"simone",
+    "lastname": "cifani",
+    "age": 38
+  }
 
-return json.dumps(data, indent=2)
+  return func.HttpResponse(data, mimetype="application/json")
